@@ -1,5 +1,10 @@
 let ataqueJugador
 let ataqueEnemigo
+let resultado
+let vidasJugador=3
+let vidasEnemigo=3
+
+
 
 
 
@@ -74,13 +79,39 @@ function seleccionarAtaqueEnemigo() {
         ataqueEnemigo ="TIERRA"
     }
 
-    crearMensaje()
+    combate()
 }
+
+function combate(){
+
+    let spanVidasJugador=document.getElementById("vidas-jugador")
+    let spanVidasEnemigo=document.getElementById("vidas-enemigo")
+
+    if(ataqueJugador==ataqueEnemigo){
+           resultado="EMPATE"
+    }
+    else if( (ataqueJugador=="FUEGO" && ataqueEnemigo=="TIERRA") || (ataqueJugador=="AGUA" && ataqueEnemigo=="FUEGO") || (ataqueJugador=="TIERRA" && ataqueEnemigo=="AGUA")){
+           resultado="GANASTE"
+           vidasEnemigo--
+           spanVidasEnemigo.innerHTML=vidasEnemigo
+    }
+    else {
+           resultado="PERDISTE"
+           vidasJugador--
+           spanVidasJugador.innerHTML=vidasJugador
+    }
+
+
+    crearMensaje()
+
+}
+
+
 
 function crearMensaje(){
     let seccionMensajes = document.getElementById("mensajes")
     let parrafo = document.createElement("p")
-    parrafo.innerHTML = "Tu mascota atacó con " + ataqueJugador + " , la mascota del enemigo atacó con " + ataqueEnemigo + " PENDIENTE"
+    parrafo.innerHTML = "Tu mascota atacó con " + ataqueJugador + " , la mascota del enemigo atacó con " + ataqueEnemigo + ", " + resultado
 
     seccionMensajes.appendChild(parrafo)
 }
