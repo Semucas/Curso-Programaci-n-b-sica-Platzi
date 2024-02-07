@@ -1,6 +1,7 @@
 let ataqueJugador
 let ataqueEnemigo
 let resultado
+let resultadoFinal
 let vidasJugador=3
 let vidasEnemigo=3
 
@@ -18,6 +19,9 @@ function iniciarJuego(){
     botonAgua.addEventListener('click', ataqueAgua)
     let botonTierra = document.getElementById("boton-tierra")
     botonTierra.addEventListener('click', ataqueTierra)
+
+    let botonReiniciar= document.getElementById("boton-reiniciar")
+    botonReiniciar.addEventListener('click', reiniciarJuego)
 
 }
 
@@ -103,6 +107,19 @@ function combate(){
 
 
     crearMensaje()
+    revisarVidas()
+
+}
+
+function revisarVidas(){
+    if(vidasEnemigo==0){
+        resultadoFinal="FELICITACIONES! HAS GANADO 🎉"
+        crearMensajeFinal()
+    }
+    else if(vidasJugador==0){
+        resultadoFinal="PERDISTE, SIGUE INTENTÁNDOLO 😢"
+        crearMensajeFinal()
+    }
 
 }
 
@@ -114,6 +131,21 @@ function crearMensaje(){
     parrafo.innerHTML = "Tu mascota atacó con " + ataqueJugador + " , la mascota del enemigo atacó con " + ataqueEnemigo + ", " + resultado
 
     seccionMensajes.appendChild(parrafo)
+}
+function crearMensajeFinal(){
+    let seccionMensajes = document.getElementById("mensajes")
+    let parrafo = document.createElement("p")
+    parrafo.innerHTML= resultadoFinal    
+    seccionMensajes.appendChild(parrafo)
+
+    let botonFuego= document.getElementById("boton-fuego")
+    botonFuego.disabled = true
+    let botonAgua = document.getElementById("boton-agua")
+    botonAgua.disabled = true
+    let botonTierra = document.getElementById("boton-tierra")
+    botonTierra.disabled=true
+
+
 }
 
 function ataqueFuego(){
@@ -129,6 +161,11 @@ function ataqueAgua(){
 function ataqueTierra(){
     ataqueJugador="TIERRA"
     seleccionarAtaqueEnemigo()
+}
+
+
+function reiniciarJuego(){
+    location.reload()
 }
 
 function aleatorio(min,max){
