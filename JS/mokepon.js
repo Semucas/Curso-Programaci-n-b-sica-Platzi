@@ -10,6 +10,15 @@ let vidasEnemigo=3
 
 
 function iniciarJuego(){
+
+    
+
+    let sectionSeleccionarAtaque= document.getElementById("seleccionar-ataque")
+    sectionSeleccionarAtaque.style.display ='none'
+
+    let sectionReiniciar = document.getElementById('reiniciar')
+    sectionReiniciar.style.display = 'none'
+
     let botonMascotaJugador = document.getElementById('boton-mascota')
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
 
@@ -26,6 +35,12 @@ function iniciarJuego(){
 }
 
 function seleccionarMascotaJugador() {
+
+    let sectionSeleccionarMascota= document.getElementById("seleccionar-mascota")
+    sectionSeleccionarMascota.style.display ='none'
+
+    let sectionSeleccionarAtaque= document.getElementById("seleccionar-ataque")
+    sectionSeleccionarAtaque.style.display ='block'
 
     let jugar=1
     let inputHipodoge =document.getElementById("Hipodoge")
@@ -44,11 +59,14 @@ function seleccionarMascotaJugador() {
     }
     else {
         alert("SELECCIONA UN MOKEPÓN")
+        reiniciarJuego()
         jugar=0
     }
     
     if(jugar==1) {
         seleccionarMascotaEnemigo()
+
+
         
     }
 }
@@ -133,6 +151,10 @@ function crearMensaje(){
     seccionMensajes.appendChild(parrafo)
 }
 function crearMensajeFinal(){
+
+    let sectionReiniciar = document.getElementById('reiniciar')
+    sectionReiniciar.style.display = 'block'
+
     let seccionMensajes = document.getElementById("mensajes")
     let parrafo = document.createElement("p")
     parrafo.innerHTML= resultadoFinal    
