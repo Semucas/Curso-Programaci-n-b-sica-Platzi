@@ -144,21 +144,30 @@ function revisarVidas(){
 
 
 function crearMensaje(){
-    let seccionMensajes = document.getElementById("mensajes")
-    let parrafo = document.createElement("p")
-    parrafo.innerHTML = "Tu mascota atacó con " + ataqueJugador + " , la mascota del enemigo atacó con " + ataqueEnemigo + ", " + resultado
+    let seccionMensajes = document.getElementById("resultado")
+    let ataquesDelJugador = document.getElementById("ataques-del-jugador")
+    let ataquesDelEnemigo = document.getElementById("ataques-del-enemigo")
 
-    seccionMensajes.appendChild(parrafo)
+    
+    let nuevoAtaqueDelJugador = document.createElement("p")
+    let nuevoAtaqueDelEnemigo = document.createElement("p")
+
+    seccionMensajes.innerHTML=resultado
+    nuevoAtaqueDelJugador.innerHTML=ataqueJugador
+    nuevoAtaqueDelEnemigo.innerHTML=ataqueEnemigo
+
+    ataquesDelJugador.appendChild(nuevoAtaqueDelJugador)
+    ataquesDelEnemigo.appendChild(nuevoAtaqueDelEnemigo)
 }
 function crearMensajeFinal(){
 
     let sectionReiniciar = document.getElementById('reiniciar')
     sectionReiniciar.style.display = 'block'
 
-    let seccionMensajes = document.getElementById("mensajes")
-    let parrafo = document.createElement("p")
-    parrafo.innerHTML= resultadoFinal    
-    seccionMensajes.appendChild(parrafo)
+    let seccionMensajes = document.getElementById("resultado")
+   
+    seccionMensajes.innerHTML= resultadoFinal
+    
 
     let botonFuego= document.getElementById("boton-fuego")
     botonFuego.disabled = true
