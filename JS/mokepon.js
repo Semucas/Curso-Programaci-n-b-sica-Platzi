@@ -40,7 +40,7 @@ function seleccionarMascotaJugador() {
     sectionSeleccionarMascota.style.display ='none'
 
     let sectionSeleccionarAtaque= document.getElementById("seleccionar-ataque")
-    sectionSeleccionarAtaque.style.display ='block'
+    sectionSeleccionarAtaque.style.display ='flex'
 
     let jugar=1
     let inputHipodoge =document.getElementById("Hipodoge")
