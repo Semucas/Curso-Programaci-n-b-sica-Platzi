@@ -26,7 +26,7 @@ body {
 
 
 
-.tarjetas {
+.tarjetas , .tarjetas-ataques {
     display: flex;
     gap: 10px;
 }
@@ -99,4 +99,19 @@ input {
     color: #11468F;
     font-family: "Poppins", sans-serif;
 
+}
+
+.ataques {
+    display:grid;
+    grid-template-columns: 100px 100px;
+    text-align: center;
+}
+
+
+@media(max-width:360px) {
+    .tarjetas , .tarjetas-ataques {
+        
+        flex-direction: column;
+    }
+    
 }
