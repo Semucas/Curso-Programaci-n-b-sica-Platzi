@@ -112,7 +112,7 @@ function combate(){
     if(ataqueJugador==ataqueEnemigo){
            resultado="EMPATE"
     }
-    else if( (ataqueJugador=="FUEGO" && ataqueEnemigo=="TIERRA") || (ataqueJugador=="AGUA" && ataqueEnemigo=="FUEGO") || (ataqueJugador=="TIERRA" && ataqueEnemigo=="AGUA")){
+    else if( (ataqueJugador=="🔥" && ataqueEnemigo=="🌱") || (ataqueJugador=="💧" && ataqueEnemigo=="🔥") || (ataqueJugador=="🌱" && ataqueEnemigo=="💧")){
            resultado="GANASTE"
            vidasEnemigo--
            spanVidasEnemigo.innerHTML=vidasEnemigo
