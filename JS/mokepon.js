@@ -92,13 +92,13 @@ function seleccionarAtaqueEnemigo() {
     
 
     if(ataqueAleatorio==1){
-        ataqueEnemigo="FUEGO"
+        ataqueEnemigo="🔥"
     }
     else if(ataqueAleatorio==2){
-        ataqueEnemigo="AGUA"
+        ataqueEnemigo="💧"
     }
     else {
-        ataqueEnemigo ="TIERRA"
+        ataqueEnemigo ="🌱"
     }
 
     combate()
@@ -180,17 +180,17 @@ function crearMensajeFinal(){
 }
 
 function ataqueFuego(){
-    ataqueJugador="FUEGO"
+    ataqueJugador="🔥"
     seleccionarAtaqueEnemigo()
 }
 function ataqueAgua(){
-    ataqueJugador="AGUA"
+    ataqueJugador="💧"
     seleccionarAtaqueEnemigo()
 
 
 }
 function ataqueTierra(){
-    ataqueJugador="TIERRA"
+    ataqueJugador="🌱"
     seleccionarAtaqueEnemigo()
 }
 
