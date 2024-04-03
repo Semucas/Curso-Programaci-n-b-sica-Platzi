@@ -7,9 +7,7 @@ const botonTierra = document.getElementById("boton-tierra")
 const botonReiniciar= document.getElementById("boton-reiniciar")
 
 const sectionSeleccionarMascota= document.getElementById("seleccionar-mascota")
-const inputHipodoge =document.getElementById("Hipodoge")
-const inputCapipepo = document.getElementById("Capipepo")
-const inputRatigueya =  document.getElementById("Ratigueya")
+
 
 const spanMascotaJugador = document.getElementById("mascota-jugador")
 const spanMascotaEnemigo = document.getElementById("mascota-enemigo")
@@ -30,6 +28,10 @@ let ataqueEnemigo
 let opcionDeMokepones
 let resultado
 let resultadoFinal
+
+let inputHipodoge 
+let inputCapipepo 
+let inputRatigueya
 let vidasJugador=3
 let vidasEnemigo=3
 
@@ -88,7 +90,7 @@ function iniciarJuego(){
 
     mokepones.forEach((Mokepon) => {
         opcionDeMokepones = `
-        <input type="radio" name="mascota" id=${Mokepon.nombre}/>
+        <input type="radio" name="mascota" id=${Mokepon.nombre} />
                 <label class="tarjeta-de-mokepon" for=${Mokepon.nombre}>
                     <p>${Mokepon.nombre}</p>
                     <img src=${Mokepon.foto} 
@@ -96,6 +98,10 @@ function iniciarJuego(){
         </label> 
         `
         contenedorTarjetas.innerHTML += opcionDeMokepones
+
+         inputHipodoge =document.getElementById("Hipodoge")
+         inputCapipepo = document.getElementById("Capipepo")
+         inputRatigueya =  document.getElementById("Ratigueya")
 
     })
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
@@ -116,13 +122,13 @@ function seleccionarMascotaJugador() {
     
     
     if (inputHipodoge.checked){
-        spanMascotaJugador.innerHTML = "Hipodoge"
+        spanMascotaJugador.innerHTML = inputHipodoge.id
     }
     else if (inputCapipepo.checked){
-        spanMascotaJugador.innerHTML = "Capipepo"
+        spanMascotaJugador.innerHTML = inputCapipepo.id
     }
     else if(inputRatigueya.checked) {
-        spanMascotaJugador.innerHTML = "Ratigueya"
+        spanMascotaJugador.innerHTML = inputRatigueya.id
     }
     else {
         alert("SELECCIONA UN MOKEPÓN")

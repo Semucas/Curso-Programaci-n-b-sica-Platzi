@@ -110,6 +110,7 @@ input:checked + label {
     display:grid;
     grid-template-columns: 100px 100px;
     text-align: center;
+    color: white;
 }
 
 
